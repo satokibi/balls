@@ -28,7 +28,7 @@ public class GameDirector : MonoBehaviour {
 
     void Update()
     {
-        ballNum.GetComponent<Text>().text = "ball:  "+BallController.GetBallNum().ToString();
+        ballNum.GetComponent<Text>().text = "ball:  " + BallController.GetBallNum().ToString();
 
         // nextTurn
         if (BallController.GetIsMoving() == true && Gaming == true)
@@ -60,6 +60,7 @@ public class GameDirector : MonoBehaviour {
     {
         Gaming = false;
         Debug.Log("GameOver");
+        BallController.ResetBallNum();
         SceneManager.LoadScene("GameScene");
     }
 

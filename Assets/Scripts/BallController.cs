@@ -17,8 +17,8 @@ public class BallController : MonoBehaviour {
     void Awake () {
         this.rb = GetComponent<Rigidbody2D>();
 	}
-	
-    
+
+
     public void FireBall(Vector2 dir)
     {
         rb.velocity = dir.normalized * speed;
@@ -44,6 +44,11 @@ public class BallController : MonoBehaviour {
     public static void IncreaseBallNum()
     {
         ballNum++;
+    }
+
+    public static void ResetBallNum()
+    {
+        ballNum = 1;
     }
 
     public static int GetBallNum()
